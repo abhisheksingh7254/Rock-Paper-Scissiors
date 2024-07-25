@@ -29,10 +29,11 @@
         onclick="
         playGame('Scissiors');
     
-    ">
+      ">
       Scissiors
     </button>
-    <button onclick="
+<!--THIS IS FOR RESETING  ALL OUR PREVIOUSLY SAVED RECORDS-->
+    <button onclick="  
     record.wins=0;
     record.losses=0;
     record.ties=0;
@@ -59,8 +60,6 @@
             }else{
             result='Nothing';
             }
-            
-
         }else if(playerMove==='Paper'){
           
             if(computerNum==='Rock'){
