@@ -36,6 +36,7 @@
     record.wins=0;
     record.losses=0;
     record.ties=0;
+    localStorage.remove('record');
     ">Reset Record</button>
   </div>
     <script>
