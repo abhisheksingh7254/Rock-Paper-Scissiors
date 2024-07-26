@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rock-Paper-Scissiors-with Object concept</title>
+  <title>Functions</title>
   <style>
     body{background: #6eb2e3;}
   </style>
@@ -29,22 +29,17 @@
         onclick="
         playGame('Scissiors');
     
-      ">
+    ">
       Scissiors
     </button>
-<!--THIS IS FOR RESETING  ALL OUR PREVIOUSLY SAVED RECORDS-->
-    <button onclick="  
+    <button onclick="
     record.wins=0;
     record.losses=0;
     record.ties=0;
     ">Reset Record</button>
   </div>
     <script>
-      record={
-        wins:0,
-        losses:0,
-        ties:0
-      }
+     const record=JSON.parse(localStorage.getItem('record'));
       function playGame(playerMove){
         computerNum=computerMove();
         let result='';
@@ -60,6 +55,8 @@
             }else{
             result='Nothing';
             }
+            
+
         }else if(playerMove==='Paper'){
           
             if(computerNum==='Rock'){
@@ -94,6 +91,8 @@
             }else if(result==='Match Ties'){
               record.ties+=1;
             }
+
+            localStorage.setItem('record',JSON.stringify(record));
             
             alert(`Computer selected ${computerNum} and You selected ${playerMove}.so ${result}\n wins=${record.wins}, Losses=${record.losses},  Ties=${record.ties}`);
           }
@@ -113,22 +112,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
